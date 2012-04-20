@@ -15,7 +15,7 @@ namespace ProjectEulerRunner
             foreach (var solution in solutions)
             {
                 Console.WriteLine("{0} {1} {2}ms = {3}",
-                    solution.MethodName, solution.Language, solution.DurationMs, solution.Result);
+                    solution.Language, solution.MethodName, solution.DurationMs, solution.Result);
             }
 
             Console.Read();
