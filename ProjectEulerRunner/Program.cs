@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace ProjectEulerRunner
 {
@@ -9,7 +10,10 @@ namespace ProjectEulerRunner
             Console.ForegroundColor = ConsoleColor.Green;
 
             var problem = Problem.GetLatest();
-            Console.WriteLine(problem.Id + ": " + problem.Description);
+
+            var line = Environment.NewLine;
+            var desc = Regex.Replace(problem.Description, line + @"\s+", line);
+            Console.WriteLine(line + "Problem " + problem.Id + ": " + line + line + desc + line);
 
             var solutions = problem.CalculateSolutions();
             foreach (var solution in solutions)
