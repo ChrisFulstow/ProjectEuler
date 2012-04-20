@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using MoreLinq;
 using ProjectEulerCore.Helpers;
 using ProjectEulerCore.Infrastructure;
 
@@ -21,13 +23,19 @@ namespace ProjectEulerCSharp
         {
             // efficient O(1) technique
             const int max = 999;
-            var sum = SumDivisibleBy(3, max) + SumDivisibleBy(5, max) - SumDivisibleBy(15, max);
+
+            // max variable is captured by the sumDivisibleBy closure
+            Func<int, int> sumDivisibleBy = divisor => Maths.ArithmeticSeries(divisor, divisor, (max / divisor));
+
+            var sum = sumDivisibleBy(3) + sumDivisibleBy(5) - sumDivisibleBy(15);
             return sum.ToString();
         }
 
-        private static int SumDivisibleBy(int divisor, int max)
+        public object SolveGenerateByIndex()
         {
-            return Maths.ArithmeticSeries(divisor, divisor, (max / divisor));
+            // using MoreLinq GenerateByIndex
+            var sum = MoreEnumerable.GenerateByIndex(x => (x % 3 == 0) || (x % 5 == 0) ? x : 0).Take(1000).Sum();
+            return sum;
         }
     }
 }
