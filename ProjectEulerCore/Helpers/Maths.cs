@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ProjectEulerCSharp.Helpers
+namespace ProjectEulerCore.Helpers
 {
     public static class Maths
     {

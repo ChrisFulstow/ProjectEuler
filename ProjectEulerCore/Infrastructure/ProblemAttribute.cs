@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectEulerCSharp.Infrastructure
+namespace ProjectEulerCore.Infrastructure
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
     public class ProblemAttribute : Attribute
