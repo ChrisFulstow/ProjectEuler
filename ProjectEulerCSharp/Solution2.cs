@@ -7,10 +7,12 @@ namespace ProjectEulerCSharp
     [Problem(2, "By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.")]
     public class Solution2
     {
+        private const int Max = 4000000;
+
         public object SolveSimple()
         {
             var sum = FibonacciNumbers()
-                .TakeWhile(x => x <= 4000000)
+                .TakeWhile(x => x <= Max)
                 .Where(x => x % 2 == 0)
                 .Sum(x => (long)x);
 
@@ -21,7 +23,7 @@ namespace ProjectEulerCSharp
         {
             var sum = FibonacciNumbers()
                 .Where((x, i) => i % 3 == 0)  // (every third Fibonacci number is even, proof below)
-                .TakeWhile(x => x <= 4000000)
+                .TakeWhile(x => x <= Max)
                 .Sum(x => (long)x);
             
             return sum;

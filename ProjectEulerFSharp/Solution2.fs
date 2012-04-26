@@ -8,6 +8,8 @@ open ProjectEulerCore.Infrastructure
 type Solution2 =
     new() = { }
     
+    member private this.max = BigInteger 4000000
+
     member private this.fibonacci =
         Seq.unfold
             (fun (current, next) -> Some(current, (next, current + next)))
@@ -15,14 +17,14 @@ type Solution2 =
         
     member this.SolveSimple =
         this.fibonacci
-            |> Seq.takeWhile (fun n -> n <= BigInteger 4000000)
+            |> Seq.takeWhile (fun n -> n <= this.max)
             |> Seq.filter (fun n -> (n % BigInteger 2) = BigInteger 0)
             |> Seq.sum
 
     member this.SolveAddEveryThirdTerm =
         this.fibonacci
             |> Seq.mapi (fun i e -> (i, e))
-            |> Seq.takeWhile (fun (i, e) -> e <= BigInteger 4000000)
+            |> Seq.takeWhile (fun (i, e) -> e <= this.max)
             |> Seq.filter (fun (i, e) -> i % 3 = 0)
             |> Seq.sumBy (fun (i, e) -> e)
 
@@ -31,6 +33,6 @@ type Solution2 =
         Seq.unfold
             (fun (i, current, next) -> Some((i, current), (i+1, next, current + next)))
             (0, BigInteger 0, BigInteger 1)
-                |> Seq.takeWhile (fun (i, e) -> e <= BigInteger 4000000)
+                |> Seq.takeWhile (fun (i, e) -> e <= this.max)
                 |> Seq.filter (fun (i, e) -> i % 3 = 0)
-                |> Seq.sumBy (fun (i, e) -> e)
+                |> Seq.sumBy snd
