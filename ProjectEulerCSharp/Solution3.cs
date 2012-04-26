@@ -7,6 +7,13 @@ namespace ProjectEulerCSharp
     What is the largest prime factor of the number 600851475143 ?")]
     public class Solution3
     {
+        // A factor is a smaller number that divides exactly into a larger number.
+        // e.g. 2, 3 and 4 are all factors of 12.
+
+        // Prime factorization of 600851475143
+
+        // There is only one unique set of prime factors for any number. (Fundamental Theorem of Arithmetic.)
+
         public object Solve()
         {
             return "Some value.";

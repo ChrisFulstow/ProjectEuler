@@ -39,8 +39,10 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Solution1.fs" />
+    <Compile Include="Solution2.fs" />
+    <Compile Include="Solution_Template.fs" />
     <None Include="Script.fsx" />
+    <Compile Include="Solution1.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProjectEulerCore\ProjectEulerCore.csproj">

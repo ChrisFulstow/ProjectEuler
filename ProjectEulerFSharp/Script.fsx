@@ -1,5 +1,3 @@
-﻿// For experimentation
+﻿// experimentation
 
-#load "Module1.fs"
-open Module1
-
+open System.Numerics
