@@ -20,5 +20,18 @@ namespace ProjectEulerCore.Helpers
             decimal sum = ((decimal)termCount / 2) * (firstTerm + lastTerm);
             return (int)sum;
         }
+
+        public static IEnumerable<int> InfiniteInt32
+        {
+            get
+            {
+                int value = 0;
+                while (true)
+                {
+                    yield return value++;
+                }
+            }
+        }
+
     }
 }
