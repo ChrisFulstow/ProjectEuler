@@ -10,16 +10,31 @@ namespace ProjectEulerCSharp
     {
         // Answer: 6857
 
+        private const long TargetNumber = 600851475143;
+
         public object Solve()
         {
-            const long num = 600851475143;
-            var n = LargestFactor(num);
+            var n = LargestFactor(TargetNumber);
 
             while (!IsPrime(n))
             {
                 n = LargestFactor(n);
             }
             return n;
+        }
+
+
+        public object Solve2()
+        {
+            var num = TargetNumber;
+            var factor = 2;
+            while (true)
+            {
+                if (num % factor == 0) num = num / factor;
+                if (num == 1) break;
+                factor = (factor == 2) ? factor + 1 : factor + 2;
+            }
+            return factor;
         }
 
 
@@ -36,6 +51,8 @@ namespace ProjectEulerCSharp
 
         private static bool IsPrime(long n)
         {
+            // note: this function can be optimised further
+
             if (n < 2) return false;
 
             var max = Math.Sqrt(n);
