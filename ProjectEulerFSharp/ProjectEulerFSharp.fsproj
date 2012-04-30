@@ -42,8 +42,9 @@
     <Compile Include="Solution2.fs" />
     <None Include="Script.fsx" />
     <Compile Include="Solution1.fs" />
-    <Compile Include="Solution_Template.fs" />
     <Compile Include="Solution3.fs" />
+    <Compile Include="Solution_Template.fs" />
+    <Compile Include="Solution4.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProjectEulerCore\ProjectEulerCore.csproj">

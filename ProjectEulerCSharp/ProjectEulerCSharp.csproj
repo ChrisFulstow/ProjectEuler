@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Solution4.cs" />
     <Compile Include="Solution3.cs" />
     <Compile Include="Solution_Template.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
