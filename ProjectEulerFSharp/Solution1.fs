@@ -4,9 +4,7 @@ open System
 open ProjectEulerCore.Infrastructure
 
 [<Problem(1, "Add all the natural numbers below one thousand that are multiples of 3 or 5.")>]
-type Solution1 =
-    new() = { }
-    
+type Solution1() =
     // brute force O(n) techniques:
 
     member this.SolveBruteForce() =

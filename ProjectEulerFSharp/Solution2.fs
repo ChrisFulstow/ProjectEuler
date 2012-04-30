@@ -5,9 +5,8 @@ open System.Numerics
 open ProjectEulerCore.Infrastructure
 
 [<Problem(2, "By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.")>]
-type Solution2 =
-    new() = { }
-    
+type Solution2() =
+   
     member private this.max = BigInteger 4000000
 
     member private this.fibonacci =
